@@ -10,8 +10,19 @@ function App() {
         </h1>
         <nav>
           <NavLink to={"/posts"}>Posts</NavLink>
-          <NavLink to={"/login"}>Log in</NavLink>
-          <NavLink to={"/signup"}>Sign up</NavLink>
+          {localStorage.getItem("token") ? (
+            <>
+              <NavLink to={"/logout"}>Log out</NavLink>
+              <NavLink to={`/users/${localStorage.getItem("id")}`}>
+                User
+              </NavLink>
+            </>
+          ) : (
+            <>
+              <NavLink to={"/login"}>Log in</NavLink>
+              <NavLink to={"/signup"}>Sign up</NavLink>{" "}
+            </>
+          )}
         </nav>
       </header>
       <main>
