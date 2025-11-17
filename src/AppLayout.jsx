@@ -1,6 +1,7 @@
 import { Link, NavLink, Outlet } from "react-router";
 import { NavigationLoadingBar } from "./components/NavigationLoadingBar";
-function App() {
+
+function AppLayout() {
   return (
     <>
       <NavigationLoadingBar />
@@ -33,4 +34,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppLayout;

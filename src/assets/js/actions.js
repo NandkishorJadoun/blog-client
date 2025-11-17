@@ -77,8 +77,7 @@ const postComment = async ({ request, params }) => {
     return;
   }
 
-  return { init: "" };
-  /* return redirect(`/posts/${params.postId}`); */
+  return redirect(`/posts/${params.postId}`);
 };
 
 export default { signUp, logIn, postComment };

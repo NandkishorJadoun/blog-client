@@ -4,10 +4,11 @@ import PostList from "./components/PostList";
 import Post from "./components/Post";
 import User from "./components/User";
 import ErrorPage from "./components/ErrorPage";
-import loader from "./assets/js/loaders";
-import action from "./assets/js/actions";
 import SignUpPage from "./components/SignUpPage";
 import LogInPage from "./components/LogInPage";
+import LogOut from "./components/LogOut";
+import loader from "./assets/js/loaders";
+import action from "./assets/js/actions";
 
 const routes = [
   {
@@ -35,6 +36,10 @@ const routes = [
     path: "/login",
     element: <LogInPage />,
     action: action.logIn,
+  },
+  {
+    path: "/logout",
+    element: <LogOut />,
   },
 ];
 
