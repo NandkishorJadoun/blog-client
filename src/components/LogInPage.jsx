@@ -1,7 +1,10 @@
-import { Form, useActionData } from "react-router";
+import { Form, useActionData, Navigate } from "react-router";
 
 function LogInPage() {
   const error = useActionData();
+
+  const auth = Boolean(localStorage.getItem("token"));
+  if (auth) return <Navigate to={"/posts"} />;
 
   return (
     <>
