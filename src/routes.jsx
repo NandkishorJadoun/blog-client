@@ -17,7 +17,12 @@ const routes = [
     children: [
       { index: true, element: <HomePage /> },
       { path: "posts", element: <PostList />, loader: loader.postList },
-      { path: "posts/:postId", element: <Post />, loader: loader.post },
+      {
+        path: "posts/:postId",
+        element: <Post />,
+        loader: loader.post,
+        action: action.postComment,
+      },
       { path: "users/:userId", element: <User />, loader: loader.user },
     ],
   },

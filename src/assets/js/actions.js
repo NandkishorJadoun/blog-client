@@ -50,4 +50,35 @@ const logIn = async ({ request }) => {
   return redirect("/posts");
 };
 
-export default { signUp, logIn };
+const postComment = async ({ request, params }) => {
+  const { postId } = params;
+  const data = await request.formData();
+  const submission = { content: data.get("comment") };
+
+  const token = localStorage.getItem("token");
+
+  const response = await fetch(
+    `http://localhost:3000/api/v1/posts/${postId}/comments`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(submission),
+    }
+  );
+
+  // will work on this once i have done validate comment through express validator
+
+  if (!response.ok) {
+    const data = await response.json();
+    console.log(data);
+    return;
+  }
+
+  return { init: "" };
+  /* return redirect(`/posts/${params.postId}`); */
+};
+
+export default { signUp, logIn, postComment };
