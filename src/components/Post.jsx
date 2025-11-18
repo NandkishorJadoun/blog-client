@@ -1,10 +1,13 @@
-import { useLoaderData, Await, Form, Link } from "react-router";
+import { useLoaderData, useActionData, Await, Form, Link } from "react-router";
 import { Suspense } from "react";
 
 function Post() {
   const { post, commentPromise } = useLoaderData();
+  const errors = useActionData();
+
   const data = post.data;
   const auth = localStorage.getItem("token");
+
   return (
     <>
       <div>{JSON.stringify(data)}</div>
@@ -29,6 +32,14 @@ function Post() {
                     />
                   </p>
                   <button>Submit</button>
+
+                  {errors && errors.length > 0 && (
+                    <ul>
+                      {errors.map((err) => (
+                        <li>{err.msg}</li>
+                      ))}
+                    </ul>
+                  )}
                 </Form>
               ) : (
                 <Link to={"/login"}>Please login first to comment</Link>

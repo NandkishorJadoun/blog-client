@@ -69,12 +69,9 @@ const postComment = async ({ request, params }) => {
     }
   );
 
-  // will work on this once i have done validate comment through express validator
-
   if (!response.ok) {
     const data = await response.json();
-    console.log(data);
-    return;
+    return data.errors;
   }
 
   return redirect(`/posts/${params.postId}`);
