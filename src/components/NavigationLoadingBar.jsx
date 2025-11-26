@@ -18,6 +18,7 @@ export function NavigationLoadingBar() {
 
   return (
     <LoadingBar
+      color="orange"
       ref={ref}
       shadow={false}
       height={5}
