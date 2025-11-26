@@ -6,7 +6,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff8da;
 }
 
 .form {
@@ -65,12 +64,3 @@
 .signupLink {
     text-align: center
 }
-
-/* ul {
-    background-color: #ffeaea;
-    border: 1px solid #ffb3b3;
-    color: #d93025;
-    padding: .75rem 2rem;
-    border-radius: 8px;
-    font-size: .9rem
-} */
