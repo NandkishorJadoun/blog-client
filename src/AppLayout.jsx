@@ -7,7 +7,7 @@ function AppLayout() {
   const userId = localStorage.getItem("id");
 
   return (
-    <div className={styles.body}>
+    <div className={`${styles.container} ${styles.layout}`}>
       <NavigationLoadingBar />
       <header className={styles.header}>
         <h1>
