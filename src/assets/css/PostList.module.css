@@ -1,0 +1,18 @@
+.postCard {
+    padding: 8px;
+    margin: 0 8px;
+    border-radius: 1rem;
+    background-color: #ffea94;
+    border: solid 1px #c6b986;
+}
+
+.postList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.link {
+    color: black;
+    text-decoration: underline;
+}
