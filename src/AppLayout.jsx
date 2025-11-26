@@ -1,36 +1,46 @@
-import { Link, NavLink, Outlet } from "react-router";
+import { Link, Outlet } from "react-router";
 import { NavigationLoadingBar } from "./components/NavigationLoadingBar";
+import styles from "./assets/css/AppLayout.module.css";
 
 function AppLayout() {
+  const auth = localStorage.getItem("token");
+  const userId = localStorage.getItem("id");
+
   return (
-    <>
+    <div className={styles.body}>
       <NavigationLoadingBar />
-      <header>
+      <header className={styles.header}>
         <h1>
-          <Link to={"/"}>Blog</Link>
+          <Link className={styles.headerLink} to={"/posts"}>
+            MiniBlog
+          </Link>
         </h1>
-        <nav>
-          <NavLink to={"/posts"}>Posts</NavLink>
-          {localStorage.getItem("token") ? (
+        <nav className={styles.nav}>
+          {auth ? (
             <>
-              <NavLink to={"/logout"}>Log out</NavLink>
-              <NavLink to={`/users/${localStorage.getItem("id")}`}>
+              <Link className={styles.navLink} to={"/logout"}>
+                Log out
+              </Link>
+              <Link className={styles.navLink} to={`/users/${userId}`}>
                 User
-              </NavLink>
+              </Link>
             </>
           ) : (
             <>
-              <NavLink to={"/login"}>Log in</NavLink>
-              <NavLink to={"/signup"}>Sign up</NavLink>{" "}
+              <Link className={styles.navLink} to={"/login"}>
+                Log in
+              </Link>
+              <Link className={styles.navLink} to={"/signup"}>
+                Sign up
+              </Link>{" "}
             </>
           )}
         </nav>
       </header>
-      <main>
+      <main className={styles.main}>
         <Outlet></Outlet>
       </main>
-      <footer>Made with ❤️ by Nandkishor</footer>
-    </>
+    </div>
   );
 }
 

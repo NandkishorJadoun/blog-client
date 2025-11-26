@@ -1,17 +1,17 @@
-import { Fragment } from "react";
+import { Link } from "react-router";
+import styles from "../assets/css/HomePage.module.css";
 
 export default function HomePage() {
   return (
-    <>
-      <h2>Welcome to my blog app</h2>
-      <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui, maiores!
+    <div className={styles.container}>
+      <img className={styles.heroImg} src="./hero.svg" alt="" />
+      <h2>Welcome to MiniBlog</h2>
+      <p className={styles.heroPara}>
+        Read, write, and explore stories from the community.
       </p>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime,
-        blanditiis exercitationem quia quibusdam quod facere corrupti ipsam
-        magni quaerat dolorum?
-      </p>
-    </>
+      <Link className={styles.link} to={"/posts"}>
+        Latest posts
+      </Link>
+    </div>
   );
 }
