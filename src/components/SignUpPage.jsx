@@ -1,4 +1,5 @@
-import { Form, useActionData, Navigate } from "react-router";
+import { Form, useActionData, Navigate, Link } from "react-router";
+import styles from "../assets/css/SignUpPage.module.css";
 
 function SignUpPage() {
   const errors = useActionData();
@@ -7,39 +8,81 @@ function SignUpPage() {
   if (auth) return <Navigate to={"/posts"} />;
 
   return (
-    <>
-      <Form method="post" action="/signup">
-        <p>
-          <label htmlFor="first-name">First Name:</label>
-          <input type="text" name="firstName" id="first-name" />
+    <main className={`${styles.container} ${styles.main}`}>
+      <Form className={styles.form} method="post" action="/signup">
+        <p className={styles.formSection}>
+          <label className={styles.label} htmlFor="first-name">
+            First Name:
+          </label>
+          <input
+            className={styles.input}
+            type="text"
+            name="firstName"
+            id="first-name"
+            required
+          />
         </p>
-        <p>
-          <label htmlFor="last-name">Last Name:</label>
-          <input type="text" name="lastName" id="last-name" />
+        <p className={styles.formSection}>
+          <label className={styles.label} htmlFor="last-name">
+            Last Name:
+          </label>
+          <input
+            className={styles.input}
+            type="text"
+            name="lastName"
+            id="last-name"
+            required
+          />
         </p>
-        <p>
-          <label htmlFor="email">E-mail:</label>
-          <input type="email" name="email" id="email" />
+        <p className={styles.formSection}>
+          <label className={styles.label} htmlFor="email">
+            E-mail:
+          </label>
+          <input
+            className={styles.input}
+            type="email"
+            name="email"
+            id="email"
+            required
+          />
         </p>
-        <p>
-          <label htmlFor="password">Password:</label>
-          <input type="password" name="password" id="password" />
+        <p className={styles.formSection}>
+          <label className={styles.label} htmlFor="password">
+            Password:
+          </label>
+          <input
+            className={styles.input}
+            type="password"
+            name="password"
+            id="password"
+            required
+          />
         </p>
-        <p>
-          <label htmlFor="confirm-password">Confirm Password:</label>
-          <input type="password" name="confirmPassword" id="confirm-password" />
+        <p className={styles.formSection}>
+          <label className={styles.label} htmlFor="confirm-password">
+            Confirm Password:
+          </label>
+          <input
+            className={styles.input}
+            type="password"
+            name="confirmPassword"
+            id="confirm-password"
+            required
+          />
         </p>
-        <button>Submit</button>
-
+        <button className={styles.submitBtn}>Submit</button>
         {errors && errors.length > 0 && (
-          <ul>
+          <ul className={styles.errList}>
             {errors.map((err) => (
               <li>{err.msg}</li>
             ))}
           </ul>
         )}
+        <div class={styles.loginLink}>
+          Already have an account? <Link to="/login">Login</Link>
+        </div>
       </Form>
-    </>
+    </main>
   );
 }
 
