@@ -1,0 +1,66 @@
+.container {
+    composes: container from "./Post.module.css";
+}
+
+.userInfoHeading {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.separator {
+    composes: separator from "./Post.module.css";
+}
+
+.btnContainer {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    background-color: #1d283a;
+    border-radius: 0.5rem;
+    padding: 4px;
+}
+
+.btn {
+    width: 100%;
+    border: none;
+    border-radius: .5rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 4px;
+    color: #1d283a;
+    background-color: #fef3c7;
+}
+
+.activeBtn {
+    color: white;
+    background-color: #1d283a;
+}
+
+.postTitle {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    text-wrap: auto;
+}
+
+.postTitle a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.postList,
+.commentList {
+    display: flex;
+    flex-direction: column;
+}
+
+.post,
+.comment {
+    composes: comment from "./Post.module.css"
+}
+
+.postInfo,
+.commentInfo {
+    composes: postInfo from "./Post.module.css";
+    font-size: 0.9rem;
+}
