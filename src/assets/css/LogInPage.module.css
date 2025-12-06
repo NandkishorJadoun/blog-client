@@ -37,7 +37,7 @@
 
 .input:focus {
     outline: none;
-    box-shadow: 0 0 5px #312c1c80;
+    box-shadow: 0 0 2px #312c1c80;
 }
 
 .submitBtn {

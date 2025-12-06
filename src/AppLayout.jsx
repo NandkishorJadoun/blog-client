@@ -10,11 +10,10 @@ function AppLayout() {
     <div className={`${styles.container} ${styles.layout}`}>
       <NavigationLoadingBar />
       <header className={styles.header}>
-        <h1>
-          <Link className={styles.headerLink} to={"/posts"}>
-            MiniBlog
-          </Link>
-        </h1>
+        <Link className={styles.headerLink} to={"/posts"}>
+          MiniBlog
+        </Link>
+
         <nav className={styles.nav}>
           {auth ? (
             <>
