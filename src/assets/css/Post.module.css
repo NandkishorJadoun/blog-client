@@ -1,0 +1,125 @@
+.container {
+    max-width: 100vw;
+    padding: 0.75rem 0.5rem;
+    line-height: 1.7;
+}
+
+.title {
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.postInfo,
+.commentInfo {
+    margin: 0.25rem 0;
+    color: #555;
+}
+
+.container a {
+    font-weight: bold;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+.separator {
+    margin: .5rem 0;
+    border: none;
+    border-top: 1px solid #c6b986;
+}
+
+.container h2,
+.container h3,
+.container h4 {
+    margin: 1rem 0 0.5rem;
+    line-height: 1.3;
+}
+
+.container h2 {
+    font-size: 1.6rem;
+}
+
+.container h3 {
+    font-size: 1.35rem;
+}
+
+.container h4 {
+    font-size: 1.2rem;
+}
+
+
+.container ul,
+.container ol {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.container li {
+    margin: 0.2rem 0;
+}
+
+.container code {
+    background-color: #535353;
+    color: rgb(255, 255, 255);
+    padding: 2px 0;
+}
+
+.container pre:has(code) {
+    border: 1px solid #c6b986;
+    background: #535353;
+    padding: 1rem;
+    border-radius: 6px;
+    line-height: 1.5;
+    margin: 1.25rem 0;
+}
+
+.container pre {
+    overflow-x: auto;
+}
+
+.commentForm {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.formSection {
+    display: flex;
+    flex-direction: column
+}
+
+.commentLabel,
+.commentsHeading {
+    margin-bottom: 4px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.textarea {
+    composes: input from "./LogInPage.module.css";
+    resize: vertical;
+    font-size: 0.95rem;
+    min-height: 120px;
+}
+
+.submitBtn {
+    composes: submitBtn from "./LogInPage.module.css";
+}
+
+.errorList {
+    composes: errList from "./SignUpPage.module.css";
+    margin: 0;
+}
+
+.comment {
+    border-radius: .5rem;
+    border: solid 1px #c6b986;
+    padding: 4px 8px;
+    margin-bottom: 0.5rem;
+    background-color: #ffea94;
+}
