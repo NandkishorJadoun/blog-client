@@ -1,5 +1,7 @@
 .container {
-    composes: container from "./Post.module.css";
+    min-width: 100vw;
+    padding: 0.75rem 0.5rem;
+    line-height: 1.7;
 }
 
 .userInfoHeading {

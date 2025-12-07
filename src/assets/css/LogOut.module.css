@@ -14,5 +14,5 @@
 }
 
 .link {
-    composes: link from "./HomePage.module.css";
+    composes: link from "./AppLayout.module.css";
 }

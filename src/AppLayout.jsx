@@ -4,7 +4,7 @@ import styles from "./assets/css/AppLayout.module.css";
 
 function AppLayout() {
   const auth = localStorage.getItem("token");
-  const userId = Number(localStorage.getItem("userid"));
+  const userId = Number(localStorage.getItem("id"));
 
   return (
     <div className={`${styles.container} ${styles.layout}`}>

@@ -1,9 +1,8 @@
 import AppLayout from "./AppLayout";
-import HomePage from "./components/HomePage";
 import PostList from "./components/PostList";
+import ErrorPage from "./components/ErrorPage";
 import Post from "./components/Post";
 import User from "./components/User";
-import ErrorPage from "./components/ErrorPage";
 import SignUpPage from "./components/SignUpPage";
 import LogInPage from "./components/LogInPage";
 import LogOut from "./components/LogOut";
@@ -13,33 +12,32 @@ import action from "./assets/js/actions";
 const routes = [
   {
     path: "/",
-    element: <AppLayout />,
-    errorElement: <ErrorPage />,
+    Component: AppLayout,
+    ErrorBoundary: ErrorPage,
     children: [
-      { index: true, element: <HomePage /> },
-      { path: "posts", element: <PostList />, loader: loader.postList },
+      { index: true, Component: PostList, loader: loader.postList },
       {
         path: "posts/:postId",
-        element: <Post />,
+        Component: Post,
         loader: loader.post,
         action: action.postComment,
       },
-      { path: "users/:userId", element: <User />, loader: loader.user },
+      { path: "users/:userId", Component: User, loader: loader.user },
     ],
   },
   {
     path: "/signup",
-    element: <SignUpPage />,
+    Component: SignUpPage,
     action: action.signUp,
   },
   {
     path: "/login",
-    element: <LogInPage />,
+    Component: LogInPage,
     action: action.logIn,
   },
   {
     path: "/logout",
-    element: <LogOut />,
+    Component: LogOut,
   },
 ];
 
