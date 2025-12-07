@@ -1,0 +1,18 @@
+.container {
+    composes: container from "./AppLayout.module.css";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.text {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.link {
+    composes: link from "./HomePage.module.css";
+}

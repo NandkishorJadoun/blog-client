@@ -1,11 +1,14 @@
 import { Link } from "react-router";
+import styles from "../assets/css/LogOut.module.css";
 
 function LogOut() {
   localStorage.clear();
   return (
-    <main>
-      <p>You're logged out</p>
-      <Link to={"/posts"}>Check Posts</Link>
+    <main className={styles.container}>
+      <p className={styles.text} >You're logged out!</p>
+      <Link className={styles.link} to={"/posts"}>
+        Check Latest Post
+      </Link>
     </main>
   );
 }
