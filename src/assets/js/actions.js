@@ -1,5 +1,7 @@
 import { redirect } from "react-router";
 
+const API_BASE = "https://api-blogly.onrender.com";
+
 const signUp = async ({ request }) => {
   const data = await request.formData();
 
@@ -11,7 +13,7 @@ const signUp = async ({ request }) => {
     confirmPassword: data.get("confirmPassword"),
   };
 
-  const response = await fetch("http://localhost:3000/api/v1/accounts/signup", {
+  const response = await fetch(`${API_BASE}/api/v1/accounts/signup`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(submission),
@@ -33,7 +35,7 @@ const logIn = async ({ request }) => {
     password: data.get("password"),
   };
 
-  const response = await fetch("http://localhost:3000/api/v1/accounts/login", {
+  const response = await fetch(`${API_BASE}/api/v1/accounts/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(submission),
@@ -58,7 +60,7 @@ const postComment = async ({ request, params }) => {
   const token = localStorage.getItem("token");
 
   const response = await fetch(
-    `http://localhost:3000/api/v1/posts/${postId}/comments`,
+    `${API_BASE}/api/v1/posts/${postId}/comments`,
     {
       method: "POST",
       headers: {
