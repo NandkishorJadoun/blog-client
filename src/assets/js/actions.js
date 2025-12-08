@@ -49,7 +49,7 @@ const logIn = async ({ request }) => {
   const json = await response.json();
   localStorage.setItem("token", json.token);
   localStorage.setItem("id", json.user.id);
-  return redirect("/posts");
+  return redirect("/");
 };
 
 const postComment = async ({ request, params }) => {
