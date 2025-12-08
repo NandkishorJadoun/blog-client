@@ -6,7 +6,7 @@ function LogOut() {
   return (
     <main className={styles.container}>
       <p className={styles.text} >You're logged out!</p>
-      <Link className={styles.link} to={"/posts"}>
+      <Link className={styles.link} to={"/"}>
         Check Latest Post
       </Link>
     </main>
