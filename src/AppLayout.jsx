@@ -11,7 +11,7 @@ function AppLayout() {
       <NavigationLoadingBar />
       <header className={styles.header}>
         <Link className={styles.headerLink} to={"/"}>
-          MiniBlog
+          Blogly
         </Link>
 
         <nav className={styles.nav}>
