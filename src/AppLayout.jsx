@@ -10,7 +10,7 @@ function AppLayout() {
     <div className={`${styles.container} ${styles.layout}`}>
       <NavigationLoadingBar />
       <header className={styles.header}>
-        <Link className={styles.headerLink} to={"/posts"}>
+        <Link className={styles.headerLink} to={"/"}>
           MiniBlog
         </Link>
 
