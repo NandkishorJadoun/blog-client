@@ -5,7 +5,7 @@ function LogInPage() {
   const error = useActionData();
   const auth = Boolean(localStorage.getItem("token"));
 
-  if (auth) return <Navigate to={"/posts"} />;
+  if (auth) return <Navigate to={"/"} />;
 
   return (
     <main className={`${styles.container} ${styles.main}`}>
