@@ -27,7 +27,7 @@ function PostCard({ post }) {
 function PostList() {
   const { data } = useLoaderData();
   return (
-    <div>
+    <div className={styles.container}>
       <p className={styles.heading}>Posts</p>
       <div className={styles.postList}>
         {data.map((post) => (

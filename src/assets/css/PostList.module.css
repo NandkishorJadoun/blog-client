@@ -1,3 +1,7 @@
+.container {
+    width: min(100%, 600px);
+}
+
 .postCard {
     padding: 8px 12px;
     margin: 0 8px;
